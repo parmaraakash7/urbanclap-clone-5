@@ -18,7 +18,7 @@ import com.example.demo.utils.ConnectionModel;
 @RestController
 @RequestMapping("/api/v1/acrepair")
 public class ACRepairController {
-	@GetMapping("/mumbai")
+	@GetMapping("/vashi")
     public ResponseEntity<List<ModelType>> getAll(){
     	List<ModelType> temp = new ArrayList<ModelType>();
     	 Connection c = null;
@@ -32,7 +32,7 @@ public class ACRepairController {
 
             stmt = c.createStatement();
             ResultSet rs = stmt.executeQuery( "SELECT id,name,rating,rating_count,address,"
-            		+ "verified,ST_AsGeoJSON(location) from ac_repair_mumbai;" );
+            		+ "verified,ST_AsGeoJSON(location) from ac_repair_vashi;" );
             
             while ( rs.next() ) {
                int id = rs.getInt("id");

@@ -16,9 +16,9 @@ import com.example.demo.model.ModelType;
 import com.example.demo.utils.ConnectionModel;
 
 @RestController
-@RequestMapping("/api/v1/electronicgood")
+@RequestMapping("/api/v1/electronicgoods")
 public class ElectronicsController {
-	@GetMapping("/mumbai")
+	@GetMapping("/vashi")
     public ResponseEntity<List<ModelType>> getAll(){
     	List<ModelType> temp = new ArrayList<ModelType>();
     	 Connection c = null;
@@ -32,7 +32,7 @@ public class ElectronicsController {
 
             stmt = c.createStatement();
             ResultSet rs = stmt.executeQuery( "SELECT id,name,rating,rating_count,address,"
-            		+ "verified,ST_AsGeoJSON(location) from electronics_good_mumbai;" );
+            		+ "verified,ST_AsGeoJSON(location) from electronic_goods_vashi;" );
             
             while ( rs.next() ) {
                int id = rs.getInt("id");
